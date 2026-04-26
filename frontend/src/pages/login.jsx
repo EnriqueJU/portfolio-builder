@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../config";
+import "./login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -43,24 +44,29 @@ function Login() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Login</h2>
+    <div className="login-page">
+
+      <div className="login-card">
+
+      <h2>Iniciar sesión</h2>
 
       <input
-        placeholder="email"
+        placeholder="Email"
         onChange={(e) => setEmail(e.target.value)}
       />
 
       <input
-        placeholder="password"
         type="password"
+        placeholder="Contraseña"
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button onClick={handleLogin}>
-        Login
+      <button className="btn-principal" onClick={handleLogin}>
+        Entrar
       </button>
+
     </div>
+  </div>
   );
 }
 
