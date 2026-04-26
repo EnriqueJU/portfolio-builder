@@ -31,7 +31,15 @@ function Proyectos({ pagina }) {
       })
     });
 
-    setProyectos(nuevosProyectos);
+    const res = await fetch(`${API_URL}/api/page`, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+    });
+
+    const data = await res.json();
+    setProyectos(data.projects);
+    };
   };
 
   // 🔴 ELIMINAR
@@ -51,7 +59,14 @@ function Proyectos({ pagina }) {
       })
     });
 
-    setProyectos(nuevosProyectos);
+    const res = await fetch(`${API_URL}/api/page`, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+    });
+
+    const data = await res.json();
+    setProyectos(data.projects);
   };
 
   return (
