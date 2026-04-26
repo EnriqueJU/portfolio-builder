@@ -31,7 +31,7 @@ function Proyectos({ pagina }) {
       })
     });
 
-    window.location.reload();
+    setProyectos(nuevosProyectos);
   };
 
   // 🔴 ELIMINAR
@@ -51,7 +51,7 @@ function Proyectos({ pagina }) {
       })
     });
 
-    window.location.reload();
+    setProyectos(nuevosProyectos);
   };
 
   return (
