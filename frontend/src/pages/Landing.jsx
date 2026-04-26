@@ -14,7 +14,9 @@ function Landing() {
 
           <div className="landing-botones">
             <button className="btn-principal">Registro</button>
-            <button className="btn-secundario">Login</button>
+            <Link to="/login">
+              <button className="btn-secundario">Login</button>
+            </Link>
           </div>
 
           <p className="landing-demo">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 function Header({ pagina }) {
@@ -23,7 +24,9 @@ function Header({ pagina }) {
 
       {/* BOTONES */}
       <div className="auth">
-        <button className="btn-secundario">Login</button>
+        <Link to="/login">
+          <button className="btn-secundario">Login</button>
+        </Link>
         <button className="btn-primario">Registro</button>
       </div>
 
