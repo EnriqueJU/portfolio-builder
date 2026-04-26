@@ -1,4 +1,3 @@
-/* fondo general */
 .landing {
   height: 100vh;
   display: flex;
@@ -16,31 +15,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0; /* quitamos efecto tarjeta */
+  border-radius: 0;
   box-shadow: 0 0 40px rgba(0,0,0,0.05);
 }
 
-/* contenedor */
 .landing-contenido {
   text-align: center;
   max-width: 600px;
 }
 
-/* título */
 .landing-titulo {
   font-size: 48px;
   margin-bottom: 10px;
   color: var(--color-fondo);
 }
 
-/* subtítulo */
 .landing-subtitulo {
   font-size: 18px;
   margin-bottom: 30px;
   
 }
 
-/* botones */
 .landing-botones {
   display: flex;
   justify-content: center;
@@ -55,14 +50,12 @@
   cursor: pointer;
 }
 
-/* botón principal */
 .btn-principal {
   background-color: var(--color-acento);
   color: white;
   border: none;
 }
 
-/* botón secundario */
 .btn-secundario {
   background: transparent;
   border: 2px solid var(--color-fondo);

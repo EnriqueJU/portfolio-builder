@@ -4,7 +4,7 @@ function Footer({ pagina }) {
   return (
     <footer className="footer">
 
-      {/* IDENTIDAD */}
+      {/* USUARIO */}
       <h3>{pagina?.heroTitle || "Usuario"}</h3>
 
       {/* TEXTO */}

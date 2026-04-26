@@ -22,7 +22,7 @@ function Proyectos({ pagina }) {
     link: ""
   });
 
-  // 🟢 CREAR
+  //CREAR
   const crearProyecto = async () => {
     const token = localStorage.getItem("token");
     const nuevosProyectos = [...proyectos, nuevoProyecto];
@@ -48,7 +48,7 @@ function Proyectos({ pagina }) {
     setProyectos(data.projects);
   };
 
-  // 🔴 ELIMINAR
+  //ELIMINAR
   const eliminarProyecto = async (index) => {
     const token = localStorage.getItem("token");
 
@@ -90,7 +90,7 @@ function Proyectos({ pagina }) {
         )}
       </div>
 
-      {/* 🟢 GRID */}
+      {/*GRID */}
       <div className="grid-proyectos">
         {proyectos.map((proyecto, index) => (
           <div
@@ -107,7 +107,7 @@ function Proyectos({ pagina }) {
               alt={proyecto.title}
             />
 
-            {/* 🔴 BOTÓN ELIMINAR */}
+            {/*BOTÓN ELIMINAR */}
             {token && (
             <button
               className="btn-eliminar"
@@ -123,7 +123,7 @@ function Proyectos({ pagina }) {
         ))}
       </div>
 
-      {/* 🟣 MODAL */}
+      {/*MODAL */}
       {proyectoActivo && (
         <div
           className="modal-overlay"

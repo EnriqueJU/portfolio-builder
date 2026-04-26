@@ -26,13 +26,13 @@ const pageSchema = new mongoose.Schema(
       unique: true
     },
 
-    // 🟢 IDENTIDAD
+    //IDENTIDAD
     name: String,
     bio: String,
 
     logo: String,
 
-    // 🟢 HERO
+    //HERO
     heroTitle: String,
     heroSubtitle: String,
 
@@ -43,17 +43,17 @@ const pageSchema = new mongoose.Schema(
       background: String
     },
 
-    // 🟢 CONTENIDO
+    //CONTENIDO
     sections: [sectionSchema],
     projects: [projectSchema],
 
-    // 🟢 CONTACTO
+    //CONTACTO
     contactText: String,
     email: String,
     linkedin: String,
     github: String,
 
-    // 🟢 FOOTER
+    //FOOTER
     footerText: String,
 
     isPublic: {

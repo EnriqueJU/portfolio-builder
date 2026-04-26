@@ -26,17 +26,14 @@ function Login() {
 
       console.log("LOGIN:", data);
 
-      // ❗ comprobar credenciales
-      if (!data.token) {
+      if (!data.token) {//comprobar credenciales
         alert("Credenciales incorrectas");
         return;
       }
 
-      // 🔐 guardar token
-      localStorage.setItem("token", data.token);
-
-      // 🚀 redirigir al usuario
-      navigate(`/${data.username}`);
+      localStorage.setItem("token", data.token);//guardar token
+  
+      navigate(`/${data.username}`);//redirigir al usuario
 
     } catch (error) {
       console.error("Error en login:", error);

@@ -18,7 +18,7 @@
 
 .hero-texto,
 .hero-imagen {
-  flex: 0.5; /* 👈 menos expansión */
+  flex: 0.5;
 }
 
 .hero-texto {
