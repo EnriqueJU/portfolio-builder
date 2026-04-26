@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./header.css";
 
 function Header({ pagina }) {
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
   return (
     <header className="header">
 
@@ -24,10 +32,24 @@ function Header({ pagina }) {
 
       {/* BOTONES */}
       <div className="auth">
-        <Link to="/login">
-          <button className="btn-secundario">Login</button>
-        </Link>
+
+        {token ? (
+          <button 
+            className="btn-secundario"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="btn-secundario">
+              Login
+            </button>
+          </Link>
+        )}
+
         <button className="btn-primario">Registro</button>
+
       </div>
 
     </header>

@@ -9,6 +9,7 @@ function Proyectos({ pagina }) {
   const token = localStorage.getItem("token");
   const [proyectos, setProyectos] = useState(pagina?.projects || []);
   const [proyectoActivo, setProyectoActivo] = useState(null);
+  const [mostrarModalCrear, setMostrarModalCrear] = useState(false);
 
   useEffect(() => {
   setProyectos(pagina?.projects || []);
@@ -76,47 +77,18 @@ function Proyectos({ pagina }) {
 
   return (
     <section className="proyectos">
+      <div className="proyectos-header">
+        <h2 className="titulo-seccion">Proyectos</h2>
 
-      <h2 className="titulo-seccion">Proyectos</h2>
-
-      {/* 🟢 FORMULARIO */}
-      {token && (
-      <div className="form-proyecto">
-
-        <input
-          placeholder="Título"
-          onChange={(e) =>
-            setNuevoProyecto({ ...nuevoProyecto, title: e.target.value })
-          }
-        />
-
-        <input
-          placeholder="Descripción"
-          onChange={(e) =>
-            setNuevoProyecto({ ...nuevoProyecto, description: e.target.value })
-          }
-        />
-
-        <input
-          placeholder="Imagen URL"
-          onChange={(e) =>
-            setNuevoProyecto({ ...nuevoProyecto, image: e.target.value })
-          }
-        />
-
-        <input
-          placeholder="Link"
-          onChange={(e) =>
-            setNuevoProyecto({ ...nuevoProyecto, link: e.target.value })
-          }
-        />
-
-        <button onClick={crearProyecto}>
-          Añadir proyecto
-        </button>
-
+        {token && (
+          <button 
+            className="btn-principal"
+            onClick={() => setMostrarModalCrear(true)}
+          >
+            + Añadir proyecto
+          </button>
+        )}
       </div>
-      )}
 
       {/* 🟢 GRID */}
       <div className="grid-proyectos">
@@ -138,12 +110,13 @@ function Proyectos({ pagina }) {
             {/* 🔴 BOTÓN ELIMINAR */}
             {token && (
             <button
+              className="btn-eliminar"
               onClick={(e) => {
                 e.stopPropagation();
                 eliminarProyecto(index);
               }}
             >
-              ❌
+              X
             </button>
             )}
           </div>
@@ -175,6 +148,60 @@ function Proyectos({ pagina }) {
           </div>
         </div>
       )}
+
+      {mostrarModalCrear && (
+        <div 
+          className="modal-overlay"
+          onClick={() => setMostrarModalCrear(false)}
+        >
+        <div 
+          className="modal crear-modal"
+          onClick={(e) => e.stopPropagation()}
+        >
+
+        <h3>Nuevo proyecto</h3>
+
+        <input
+          placeholder="Título"
+          onChange={(e) =>
+            setNuevoProyecto({ ...nuevoProyecto, title: e.target.value })
+          }
+        />
+
+      <input
+        placeholder="Descripción"
+        onChange={(e) =>
+          setNuevoProyecto({ ...nuevoProyecto, description: e.target.value })
+        }
+      />
+
+      <input
+        placeholder="Imagen URL"
+        onChange={(e) =>
+          setNuevoProyecto({ ...nuevoProyecto, image: e.target.value })
+        }
+      />
+
+      <input
+        placeholder="Link"
+        onChange={(e) =>
+          setNuevoProyecto({ ...nuevoProyecto, link: e.target.value })
+        }
+      />
+
+      <button
+        className="btn-principal"
+        onClick={async () => {
+          await crearProyecto();
+          setMostrarModalCrear(false);
+        }}
+      >
+        Crear
+      </button>
+
+    </div>
+  </div>
+)}
 
     </section>
   );

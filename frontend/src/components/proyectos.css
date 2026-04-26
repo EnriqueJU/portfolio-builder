@@ -7,6 +7,47 @@
 .titulo-seccion {
   margin-bottom: 40px;
   color: var(--color-principal);
+  margin: 0 auto;
+}
+
+.btn-principal {
+  width: fit-content;
+}
+
+.proyectos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+/* centramos el título */
+.proyectos-header h2 {
+  grid-column: 2;
+  text-align: center;
+}
+
+/* botón a la derecha */
+.btn-crear {
+  position: absolute;
+  right: 20px;              /* 🔥 ajusta separación */
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: auto;
+  white-space: nowrap;
+}
+
+.btn-crear {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.proyectos-header button {
+  padding: 10px 18px;
 }
 
 .grid-proyectos {
@@ -58,13 +99,13 @@
 .modal {
   background: var(--color-fondo);
   border-radius: 12px;
-
   display: flex;
   gap: 20px;
 
+  flex-direction: row; /* 🔥 CLAVE */
+  
   max-width: 700px;
   width: 90%;
-
   padding: 20px;
 }
 
@@ -85,6 +126,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .modal-contenido h3 {
@@ -97,7 +140,7 @@
 }
 
 .modal-contenido a {
-  align-self: flex-start;
+  align-self: center;
 
   padding: 10px 18px;
   border-radius: 6px;
@@ -122,4 +165,45 @@
   .modal-contenido a {
     align-self: center;
   }
+}
+
+
+.crear-modal {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.crear-modal input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.crear-modal button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-eliminar{
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  color: #c0392b;
+  transition: 0.2s;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+  color: white;
+  transform: translateY(-1px);
 }
