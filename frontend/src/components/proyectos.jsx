@@ -1,10 +1,18 @@
 import { useState } from "react";
 import "./proyectos.css";
 import { API_URL } from "../config";
+import { useEffect } from "react";
+
+
 
 function Proyectos({ pagina }) {
   const token = localStorage.getItem("token");
+  const [proyectos, setProyectos] = useState(pagina?.projects || []);
   const [proyectoActivo, setProyectoActivo] = useState(null);
+
+  useEffect(() => {
+  setProyectos(pagina?.projects || []);
+  }, [pagina]);
 
   const [nuevoProyecto, setNuevoProyecto] = useState({
     title: "",
@@ -12,8 +20,6 @@ function Proyectos({ pagina }) {
     image: "",
     link: ""
   });
-
-  const proyectos = pagina?.projects || [];
 
   // 🟢 CREAR
   const crearProyecto = async () => {
@@ -39,7 +45,6 @@ function Proyectos({ pagina }) {
 
     const data = await res.json();
     setProyectos(data.projects);
-    };
   };
 
   // 🔴 ELIMINAR
