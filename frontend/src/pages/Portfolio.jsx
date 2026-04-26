@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { temaPorDefecto } from "../Tema.js";
-
+import { API_URL } from "../config";
 import Header from "../components/header";
 import Hero from "../components/hero";
 import Secciones from "../components/secciones";
@@ -15,7 +15,7 @@ function Portfolio() {
   
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/public/${username}`)
+    fetch(`${API_URL}/api/public/${username}`)
       .then(res => res.json())
       .then(data => setPagina(data));
   }, [username]);

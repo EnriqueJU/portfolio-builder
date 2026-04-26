@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./proyectos.css";
+import { API_URL } from "../config";
 
 function Proyectos({ pagina }) {
   const token = localStorage.getItem("token");
@@ -19,7 +20,7 @@ function Proyectos({ pagina }) {
     const token = localStorage.getItem("token");
     const nuevosProyectos = [...proyectos, nuevoProyecto];
 
-    await fetch("http://localhost:3000/api/page", {
+    await fetch(`${API_URL}/api/page`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +40,7 @@ function Proyectos({ pagina }) {
 
     const nuevosProyectos = proyectos.filter((_, i) => i !== index);
 
-    await fetch("http://localhost:3000/api/page", {
+    await fetch(`${API_URL}/api/page`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
