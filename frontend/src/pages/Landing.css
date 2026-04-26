@@ -1,0 +1,122 @@
+/* fondo general */
+.landing {
+  height: 100vh;
+  display: flex;
+  background-color: var(--color-fondo);
+  background-image: radial-gradient(var(--color-borde) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+.landing-caja {
+  width: 70%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  background-color: var(--color-principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0; /* quitamos efecto tarjeta */
+  box-shadow: 0 0 40px rgba(0,0,0,0.05);
+}
+
+/* contenedor */
+.landing-contenido {
+  text-align: center;
+  max-width: 600px;
+}
+
+/* título */
+.landing-titulo {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: var(--color-fondo);
+}
+
+/* subtítulo */
+.landing-subtitulo {
+  font-size: 18px;
+  margin-bottom: 30px;
+  
+}
+
+/* botones */
+.landing-botones {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-principal,
+.btn-secundario {
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+/* botón principal */
+.btn-principal {
+  background-color: var(--color-acento);
+  color: white;
+  border: none;
+}
+
+/* botón secundario */
+.btn-secundario {
+  background: transparent;
+  border: 2px solid var(--color-fondo);
+  color: var(--color-fondo);
+}
+
+.btn-principal:hover,
+.btn-secundario:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.btn-principal:hover {
+  background-color: #a95539;
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-fondo);
+  color: var(--color-principal);
+}
+
+.landing-demo {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.landing-demo a {
+  color: var(--color-acento);
+  text-decoration: none;
+}
+
+.landing-demo a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .landing-caja {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .landing-caja {
+    width: 100%;
+    border-radius: 0; /* ocupa toda la pantalla */
+    padding: 30px 20px;
+    font-size: 32px;
+  }
+
+  .landing-botones {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+

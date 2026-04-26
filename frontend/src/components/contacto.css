@@ -1,0 +1,33 @@
+.contacto {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: var(--color-fondo);
+}
+
+.contacto-texto {
+  color: var(--color-texto-secundario);
+  margin-bottom: 30px;
+}
+
+.contacto-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contacto-links a {
+  padding: 10px 20px;
+  border-radius: 8px;
+
+  background-color: var(--color-acento);
+  color: white;
+  text-decoration: none;
+
+  transition: 0.25s;
+}
+
+.contacto-links a:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.85);
+}

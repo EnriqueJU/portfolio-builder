@@ -1,0 +1,102 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 40px;
+
+  background-color: var(--color-principal);
+  color: var(--color-fondo);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-placeholder {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-verde-apoyo);
+  border-radius: 6px;
+}
+
+.nav {
+  display: flex;
+  gap: 25px; /* 👈 separación */
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--color-fondo);
+  font-weight: 500;
+  transition: 0.2s;
+  display: inline-block;
+}
+
+.nav a:hover {
+  color: var(--color-acento);
+}
+
+.activo {
+  border-bottom: 2px solid var(--color-acento);
+}
+
+/* CONTENEDOR */
+.auth {
+  display: flex;
+  gap: 10px;
+}
+
+/* BASE (igual que landing) */
+.btn-primario,
+.btn-secundario {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* PRIMARIO */
+.btn-primario {
+  background-color: var(--color-acento);
+  color: white;
+  border: none;
+}
+
+/* SECUNDARIO */
+.btn-secundario {
+  background: transparent;
+  border: 2px solid var(--color-fondo);
+  color: var(--color-fondo);
+}
+
+/* HOVER GLOBAL */
+.btn-primario:hover,
+.btn-secundario:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* 🔥 CLAVE: OSCURECER DINÁMICO */
+.btn-primario:hover {
+  filter: brightness(0.85);
+}
+
+/* SECUNDARIO */
+.btn-secundario:hover {
+  background-color: var(--color-fondo);
+  color: var(--color-principal);
+}

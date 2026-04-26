@@ -1,0 +1,35 @@
+.footer {
+  padding: 40px 20px;
+  text-align: center;
+
+  background-color: var(--color-principal);
+  color: var(--color-fondo);
+}
+
+.footer-texto {
+  margin: 10px 0 20px;
+  opacity: 0.8;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: var(--color-fondo);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--color-acento);
+}
+
+.footer-copy {
+  font-size: 14px;
+  opacity: 0.7;
+}
